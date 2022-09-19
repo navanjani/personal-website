@@ -1,9 +1,9 @@
 version: "3"
 
 services:
-    client:
+    navanjani-personal:
         image: nginx
         ports:
-            - 8000:80
+            - 80:80
         volumes:
             - ./src:/usr/share/nginx/html
