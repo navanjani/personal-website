@@ -7,3 +7,17 @@ services:
             - 80:80
         volumes:
             - ./src:/usr/share/nginx/html
+        networks:
+            - traefik
+        labels:
+            - "traefik.enable=true"
+            - "traefik.backend=nginx"
+            - "traefik.port=80"
+            - "traefik.frontend.rule=Host:navanjani.com"
+        deploy:
+          mode: replicated
+          replicas: 1
+
+networks:
+  traefik:
+    external: true
